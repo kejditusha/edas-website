@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Eda Nailsss</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Eda Nails</h1>
+        <form id="appointment-form" action="emails.php" method="post">
+            <label for="name">Emri:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Numer tel:</label>
+            <input type="tel" id="phone" name="phone" placeholder="xxx-xxx-xxxx" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                required>
+
+            <label for="hour">Orari:</label>
+            <select id="hour" name="hour" required>
+                <option value="">Zgjidh orarin</option>
+                <option value="9:00 AM">9:00 AM</option>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="12:00 PM">12:00 PM</option>
+                <option value="1:00 PM">1:00 PM</option>
+                <option value="2:00 PM">2:00 PM</option>
+                <option value="3:00 PM">3:00 PM</option>
+                <option value="4:00 PM">4:00 PM</option>
+                <option value="5:00 PM">5:00 PM</option>
+            </select>
+
+            <button type="submit">Prenoto</button>
+        </form>
+    </div>
+</body>
+
+</html>
