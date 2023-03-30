@@ -1,16 +1,24 @@
 <?php
-$name = $_POST['name'];
-$phone = $_POST['phone'];
-$hour = $_POST['hour'];
 
-$to = 'kejditusha02@gmail.com';
-$subject = 'Appointment Request from Eda Nails';
-$message = "Emri: $name\nNumer tel: $phone\nOrari: $hour";
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = $_POST['name'];
+    $phone = $_POST['phone'];
+    $time = $_POST['time'];
 
-$headers = "From: kejditusha02@gmail.com";
-mail($to, $subject, $message, $headers);
+    // send email
+    $to = 'kejditusha02@gmail.com';
+    $subject = 'New Appointment Booking';
+    $message = "Name: $name\nPhone Number: $phone\nPreferred Time: $time";
+    $headers = 'From: Eda Nails <no-reply@edanails.com>' . "\r\n" .
+        'Reply-To: no-reply@edanails.com' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
 
-header('Location: thank-you.html');
-exit;
+    if (mail($to, $subject, $message, $headers)) {
+        echo 'Appointment booked successfully. We will contact you shortly to confirm.';
+    } else {
+        echo 'There was an error booking your appointment. Please try again later.';
+    }
+}
+
 ?>
 
